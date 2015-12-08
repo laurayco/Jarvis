@@ -1,8 +1,8 @@
 #Jarvis
 ## What is Jarvis?
-Jarvis is an operating system project aimed to be an AI based personal assistant capable of dynamic learning and knowledge growth backed by wikipedia and various repositories of web data.
+Jarvis is an operating system project aimed to be an AI based personal assistant capable of dynamic learning and knowledge growth backed by Wikipedia and various repositories of web data.
 
-The issue with modern / current AI based personal assistants (ie: Google Now / Siri / etc. ) is that their functionality is limited to various pre-defined keywords. The Jarvis project aims to enable dynamic / fuzzy natural langauge processing to disambiguate various commands, queries, and declarations (ie: "Play 'Back in Black'" vs "Turn on 'Back in Black' or even, "Replay that last album on high volume). It is unlikely that a software developer can anticipate every possible configuration of conditions an end user may specify, so the solution is to create a software capable of identifying different, sometimes ambiguous, conditions / commands / etc.
+The issue with modern / current AI based personal assistants (ie: Google Now / Siri / etc. ) is that their functionality is limited to various pre-defined keywords. The Jarvis project aims to enable dynamic / fuzzy natural language processing to disambiguate various commands, queries, and declarations (ie: "Play 'Back in Black'" vs "Turn on 'Back in Black' or even, "Replay that last album on high volume). It is unlikely that a software developer can anticipate every possible configuration of conditions an end user may specify, so the solution is to create a software capable of identifying different, sometimes ambiguous, conditions / commands / etc.
 
 Some immediate planned features for Jarvis (core functionality):
 
