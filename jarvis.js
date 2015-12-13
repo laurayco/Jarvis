@@ -33,10 +33,66 @@ const dgram = require('dgram');
   module.JARVIS_PORT = 8000;
   module.JARVIS_GROUP = '230.185.192.108';
 
+  var Statement = (function(text){
+    this.text = text;
+    this.critical = text.indexOf("!") >= 0;
+    this.kind = (function(text){
+      if(text.indexOf("?") >= 0) {
+        return "q";
+      } else {
+        return "a";//data assertion
+        // return "i";//imperative
+      }
+    });
+    return this;
+  });
+
+  Statement.prototype.process = (function(j_interface,cb){
+    if(this.kind==='q') {
+      j_interface.execute_query(this,cb);
+    } else if(this.kind==='a') {
+      j_interface.assert_data(this,false,cb);
+    } else if(this.kind==='i') {
+      j_interface.execute_action(this,cb);
+    }
+  });
+
   var Jarvis = (function(){
     this.available_apis = {};//service-name
     return this;
   });
+
+  Jarvis.prototype.register_api = (function(svc_name,host,port){
+    this.available_apis[svc_name] = {
+      'host':host,
+      'port':port
+    }
+  });
+
+  /*
+    Jarvis Class will not be exported.
+    It is internal use only, and will be
+    launched in a single-instance server
+    when jarvis.js is executed on its own.
+  */
+
+  var JarvisInterface = (function(){
+    return this;
+  });
+
+  JarvisInterface.prototype.execute_query = (function(query,cb){
+    cb();
+  });
+
+  JarvisInterface.prototype.execute_action = (function(command,cb){
+    cb();
+  });
+
+  JarvisInterface.prototype.assert_data = (function(statement,confirmed,cb){
+    cb();
+  });
+
+  module.JarvisInterface = JarvisInterface;
 
   var ServiceRegistry = (function(){
     this.jarvis_server = null;
