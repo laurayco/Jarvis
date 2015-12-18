@@ -8,21 +8,20 @@ namespace NaturalLanguage {
   class Sentence;
   class Conversation;
   class Context;
+  struct Connotation;
 
   class Sentence {
   protected:
     std::vector<std::string> words;
-    void tokenize(const char*);
+    void tokenize(char*);
   public:
+    typedef std::vector<std::string>::iterator iterator;
+    typedef const std::vector<std::string>::iterator const_iterator;
+    std::vector<std::string>::iterator begin();
+    std::vector<std::string>::iterator end();
     Sentence(const char*);
     Sentence(const std::string&);
     virtual ~Sentence();
-  };
-
-  class Conversation {
-  protected:
-    std::vector<Sentence> statements;
-    Context context;
   };
 
   struct Connotation {
@@ -38,6 +37,13 @@ namespace NaturalLanguage {
 
   class Context {
     const Connotation get_connotation(const char*);
+    virtual ~Context();
+  };
+
+  class Conversation {
+  protected:
+    std::vector<Sentence> statements;
+    Context context;
   };
 
 }
