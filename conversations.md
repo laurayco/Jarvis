@@ -1,4 +1,4 @@
-#Communicating with Jarvis
+# Communicating with Jarvis
 The key method of communication with Jarvis will be "conversations." A conversation includes context, subject and statements.
 
 Context involves using a graph database. For example, when planning a Christmas party, the context would connect to the calendar API to identify available time slots, and if available available time slots of intended guests. Jarvis could then offer to initiate and monitor a conversation to determine a solid date.
